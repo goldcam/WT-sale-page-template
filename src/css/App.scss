@@ -50,7 +50,7 @@ body{
     }
 }
 
-.container{
+.main-container {
   color: #fff;
   .page-title{
     background: url(../img/header.png) no-repeat;
@@ -201,7 +201,7 @@ img.featuredbigIcon, img.bigIcon {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .container {
+  .main-container  {
     .lpNav{
       li{
         a{
@@ -226,7 +226,7 @@ img.featuredbigIcon, img.bigIcon {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .container {
+  .main-container  {
     .lpNav{
       li{
         a{
@@ -260,7 +260,7 @@ img.featuredbigIcon, img.bigIcon {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .container {
+  .main-container  {
     .lpNav{
     }
     nav.sortNav{
@@ -285,7 +285,7 @@ img.featuredbigIcon, img.bigIcon {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px){
-  .container {
+  .main-container  {
       .lpNav{
       }
       nav.sortNav{

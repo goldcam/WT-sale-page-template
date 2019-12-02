@@ -90,6 +90,7 @@ class GameTile extends Component {
                 'wildcoinspurchasecost': prod.wildcoinspurchasecost,
                 'genre': genre,
                 'bigIcon': `https://optimizedimages.wildtangent.com/${prod.productkey}/big_icon.png?h=160&amp;amp;w=160&amp;amp;auto=compress&amp;amp;cs=tinysrgb`,
+                'featuredTile': `https://optimizedimages.wildtangent.com/${prod.productkey}/featured_tile.jpg?auto=compress&cs=tinysrgb`,
                 'purchasecost': prod.purchasecost.value.toFixed(2),
                 'fullPrice': obj.fullPrice,
                 'releasedate': releaseDate,
@@ -126,7 +127,7 @@ class GameTile extends Component {
           return (
            (game.fullWcPrice != null && this.props.showPricesIn === 'wildcoins' ) || this.props.showPricesIn === 'cash' ? (
             <div onClick={() => this.props.tileClick(game)}
-               className={"wrapperElement col-xs-5 col-sm-5 col-md-3 col-lg-2 active"}
+               className={"wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 active"}
                data-event-action="Fall-flash-sale Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
@@ -134,29 +135,42 @@ class GameTile extends Component {
                data-orderitemid={game.productkey}>
             <div className="innerWrapper">
             <div className="bigIconDiv">
-              <img src={game.bigIcon} className="bigIcon" alt={game.title} />
+              <img src={game.featuredTile} className="bigIcon" alt={game.title} />
             </div>
             <p className="gameTitle">{game.title}</p>
-            <p className="genre">{game.genre}</p>
-            { this.props.showPricesIn === 'cash' ? (
-             <p className="gamePrice cash">
-             <span className="strikeThrough">${game.fullPrice}</span>
-             <span className="price">${game.purchasecost}</span>
-              <span className="percent-off">
-                {Math.abs(((game.purchasecost/game.fullPrice) - 1) * 100).toFixed()}% off
-              </span>
-             </p>
-            ) : (
-              <p className="gamePrice wildcoins">
-                <span className="strikeThrough">{game.fullWcPrice}</span>
 
-                <span className="wildcoinPrice price">{game.wildcoinspurchasecost.value}</span>
-                <span className="percent-off">
-                {Math.abs(((game.wildcoinspurchasecost.value/game.fullWcPrice) - 1) * 100).toFixed()}% off
+            <p className="bottom-text">
+              <span className="genre">{game.genre}</span>
+
+              { this.props.showPricesIn === 'cash' ? (
+               <span className="gamePrice cash">
+                 <span className="strikeThrough">${game.fullPrice}</span>
+
+                 <span className='sale-and-discount'>
+                   <span className="percent-off">
+                     {Math.abs(((game.purchasecost/game.fullPrice) - 1) * 100).toFixed()}% off
+                   </span>
+                   <span className="price">${game.purchasecost}</span>
+                 </span>
+                 
+               </span>
+              ) : (
+                <span className="gamePrice wildcoins">
+                  <span className="strikeThrough">{game.fullWcPrice}</span>
+
+                  <span className='sale-and-discount'>
+                    <span className="percent-off">
+                    {Math.abs(((game.wildcoinspurchasecost.value/game.fullWcPrice) - 1) * 100).toFixed()}% off
+                    </span>
+                    <span className="wildcoinPrice price">{game.wildcoinspurchasecost.value}</span>
+                  </span>
+
                 </span>
-              </p>
-          )}
-            <a href={`/games/${game.friendlyproductkey}`} className="cta" title="More Info" data-event-category="Landing Page" data-event-action="Fall-flash-sale" data-event-label={game.productkey} >More Info</a>
+            )}
+
+            </p>
+
+
             </div>
           </div>
           ) : ''
