@@ -1,0 +1,152 @@
+$tileBG: #fff;
+$gray: #8d8d8d;
+
+div.innerWrapper p,
+div.innerWrapper > a {
+  margin: 5px 10px;
+  font-size: .975em;
+  text-align: left;
+  line-height: 1.125em;
+}
+
+  div.innerWrapper p.gameTitle{
+    min-height: 46px;
+    height: 46px;
+    font-weight: normal;
+    margin-bottom: 6px;
+    overflow: hidden;
+    font-size: 1.125em;
+    color: #333;
+    text-align: left;
+  }
+  .featuredTheme, .genre{
+    color:#939090;
+    min-height: 13px;
+  }
+
+  p.gamePrice{
+    color: #5e5e5e;
+    min-height: 13px;
+    font-weight: 700;
+    height: 46px;
+    span{
+      font-size: 1.25em;
+      &.strikeThrough{
+          text-decoration: line-through;
+          color:$gray;
+          display: block;
+          height: 16px;
+      }
+      &.salePrice{
+        color:#c92e2a;
+      }
+
+      &.price{
+
+        font-size: 1.7em;
+        line-height: 1.55em;
+        letter-spacing: -1px;
+      }
+      &.percent-off{
+        //font-size: .75rem;
+        margin-left: 6px;
+        color: #b60505;
+        //color:$gray;
+      }
+      &.wildcoinPrice{
+        color:#4f1ac4;
+      }
+    }
+
+    &.wildcoins{
+      span{
+        &:after{
+          content: '';
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          margin-left: 4px;
+          vertical-align: bottom;
+          background-image: url('https://webassets.wildtangent.com/css/img/wildcoin_xsm.png');
+        }
+        &.percent-off{
+          &:after{
+            content: '';
+            width: 0px;
+            height: 0px;
+            display: inline-block;
+            margin-left: 0px;
+            vertical-align: none;
+            background-image: none;
+          }
+        }
+        &.wildcoinPrice{
+          &:after{
+            vertical-align: middle;
+            margin-bottom: 4px;
+          }
+        }
+        &.strikeThrough{
+          &:after{
+            filter: grayscale(80%) contrast(70%);
+          }
+        }
+      }
+    }
+
+  }
+
+
+  div.innerWrapper > a{
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding:6px 10px 6px;
+    text-align: center;
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    display: block;
+    font-size: 1.15em;
+    line-height: 1em;
+    font-weight: 600;
+    text-transform: uppercase;;
+}
+a.cta{
+    background:#2359bc;
+    &:hover{
+      text-decoration: none;
+        background:#3971db;
+    }
+}
+div.wrapperElement{
+  display: none;
+
+  padding: 0 0 8px;
+  // margin:0 15px 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 300ms ease;
+  &.active{
+    display: block;
+  }
+  .innerWrapper {
+    box-sizing: border-box;
+    margin: 0 15px 15px;
+    background: $tileBG;
+    padding-bottom: 6px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    .bigIconDiv img {
+        border-radius: 5px 5px 0 0;
+    }
+  }
+}
