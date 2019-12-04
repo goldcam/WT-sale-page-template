@@ -4,27 +4,31 @@ $gray: #8d8d8d;
 div.innerWrapper p,
 div.innerWrapper > a {
   margin: 5px 10px;
-  font-size: .975em;
   text-align: left;
   line-height: 1.125em;
 }
 
-  div.innerWrapper p.gameTitle{
-    min-height: 16px;
-    height: 16px;
+  div.innerWrapper .gameTitle{
+    min-height: 36px;
+    //height: 36px;
     font-weight: 600;
-    margin-bottom: 6px;
-    overflow: hidden;
-    font-size: 1.125em;
+    //margin-bottom: 6px;
+    font-size: 1.25em;
+    line-height: 1.25em;
     color: #333;
     text-align: left;
-    text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
   }
   .featuredTheme, .genre{
-    color:$gray;
-    min-height: 13px;
+    color:#666;
+    font-size: 1.1em;
+  }
+
+  p.bottom-text {
+    min-height: 40px;
   }
 
   .gamePrice{
@@ -33,13 +37,14 @@ div.innerWrapper > a {
     font-weight: 700;
     height: 46px;
     span{
+      line-height: 1;
       //font-size: 1.25em;
       &.strikeThrough{
           text-decoration: line-through;
           color:$gray;
           float: right;
-          //display: block;
-          //height: 16px;
+          font-size: 1.15em;
+          line-height: 1.15em;
       }
       &.salePrice{
         color:#c92e2a;
@@ -48,16 +53,15 @@ div.innerWrapper > a {
         display: block;
         text-align: right;
         margin-top: 4px;
+        font-size: 1.417em;
+        font-weight: 600;
       }
       &.price{
-        font-size: 1.7em;
-        line-height: 1.55em;
-        letter-spacing: -1px;
+        color: #000;
+        font: inherit;
       }
       &.percent-off{
-        margin-right: 6px;
-        font-size: 1.25em;
-        font-weight: 800;
+        margin-right: .25em;
         color: #b60505;
       }
       &.wildcoinPrice{
@@ -141,14 +145,14 @@ div.wrapperElement{
   cursor: pointer;
 
   transition: all 300ms ease;
-  max-width: 300px;
-
+  max-width: 350px;
+  //min-width: 230px;
   &.active{
     display: block;
   }
   .innerWrapper {
     box-sizing: border-box;
-    margin: 0 15px 15px;
+    margin: 0 8px 8px;
     background: $tileBG;
     //padding-bottom: 2px;
     border-radius: 5px;

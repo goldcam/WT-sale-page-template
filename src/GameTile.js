@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { polyfill } from 'es6-promise';
 import axios from 'axios';
 import './css/GameTile.scss';
+import LinesEllipsis from 'react-lines-ellipsis';
+import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC';
+
+const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis)
+
+
 
 polyfill();
 
@@ -12,10 +18,18 @@ class GameTile extends Component {
     this.state = {
       games: []
     }
+    this.addDefaultSrc = this.addDefaultSrc.bind(this);
   }
 
   getGames(){
     let gamesArr = [
+      //test oids
+      {oid:"tendaysunderthesea", fullPrice:	9.99, fullWcPrice:	40},
+      {oid:"thewitchsapprenticeamagicaalmish", fullPrice:	19.99, fullWcPrice:	40},
+      {oid:"oidbrav005277queensquest5ce", fullPrice:	19.99, fullWcPrice:	40},
+      {oid:"bigkahunawords", fullPrice:	19.99, fullWcPrice:	40},      
+
+
       {oid:"oidimma006073renzoracer", fullPrice:	9.99, fullWcPrice:	40},
       {oid:"oidalaw005994robinhoodcountry", fullPrice:	19.99, fullWcPrice:	80},
       {oid:"oidsuri006000jewelmatchatlanti", fullPrice:	12.99, fullWcPrice:	50},
@@ -89,7 +103,7 @@ class GameTile extends Component {
                 'fullWcPrice': obj.fullWcPrice,
                 'wildcoinspurchasecost': prod.wildcoinspurchasecost,
                 'genre': genre,
-                'bigIcon': `https://optimizedimages.wildtangent.com/${prod.productkey}/big_icon.png?h=160&amp;amp;w=160&amp;amp;auto=compress&amp;amp;cs=tinysrgb`,
+                'bigIcon': `https://optimizedimages.wildtangent.com/${prod.productkey}/big_icon.png?h=160&w=160&auto=compress&cs=tinysrgb`,
                 'featuredTile': `https://optimizedimages.wildtangent.com/${prod.productkey}/featured_tile.jpg?auto=compress&cs=tinysrgb`,
                 'purchasecost': prod.purchasecost.value.toFixed(2),
                 'fullPrice': obj.fullPrice,
@@ -118,16 +132,23 @@ class GameTile extends Component {
     this.getGames();
   }
 
+  addDefaultSrc(e){
+    let img = e.target;
+    img.src = `https://optimizedimages.wildtangent.com/${img.dataset.oid}/big_icon.png?auto=format&dpr=1&cs=tinysrgb&fill=blur&crop=false&fit=fillmax&w=350&h=143&ixlib=react-7.2.0`;
+    img.classList.remove('featuredTile');
+    //img.srcset = `https://optimizedimages.wildtangent.com/${img.dataset.oid}/big_icon.png?auto=format&dpr=2&cs=tinysrgb&fill=blur&crop=false&fit=fillmax&w=350&h=196&ixlib=react-7.2.0 2x, https://optimizedimages.wildtangent.com/${img.dataset.oid}/big_icon.png?auto=format&dpr=3&cs=tinysrgb&fill=blur&crop=false&fit=fillmax&w=350&h=196&ixlib=react-7.2.0 3x`
+    img.classList.add('bigIcon');
+  }
+
   render(){
 
     return (
       <>
       { (this.state.games.length > 0 && this.props.showGames === true ) ? this.state.games.map(game => {
-
           return (
            (game.fullWcPrice != null && this.props.showPricesIn === 'wildcoins' ) || this.props.showPricesIn === 'cash' ? (
             <div onClick={() => this.props.tileClick(game)}
-               className={"wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 active"}
+               className={"wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 active"}
                data-event-action="Fall-flash-sale Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
@@ -135,12 +156,21 @@ class GameTile extends Component {
                data-orderitemid={game.productkey}>
             <div className="innerWrapper">
             <div className="bigIconDiv">
-              <img src={game.featuredTile} className="bigIcon" alt={game.title} />
+              <img src={game.featuredTile} className="featuredTile" alt={game.title} onError={this.addDefaultSrc} data-oid={game.productkey} />
             </div>
-            <p className="gameTitle">{game.title}</p>
+
+            <ResponsiveEllipsis style={{ whiteSpace: 'pre-wrap' }}
+              text={game.title}
+               maxLine='2'
+               ellipsis='...'
+               trimRight='true'
+               basedOn='words'
+               className="gameTitle"
+               component='p'
+            />
 
             <p className="bottom-text">
-              <span className="genre">{game.genre}</span>
+              <span className="genre">{game.genre} </span>
 
               { this.props.showPricesIn === 'cash' ? (
                <span className="gamePrice cash">
@@ -152,7 +182,7 @@ class GameTile extends Component {
                    </span>
                    <span className="price">${game.purchasecost}</span>
                  </span>
-                 
+
                </span>
               ) : (
                 <span className="gamePrice wildcoins">
