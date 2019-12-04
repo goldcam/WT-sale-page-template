@@ -27,7 +27,7 @@ class GameTile extends Component {
       {oid:"tendaysunderthesea", fullPrice:	9.99, fullWcPrice:	40},
       {oid:"thewitchsapprenticeamagicaalmish", fullPrice:	19.99, fullWcPrice:	40},
       {oid:"oidbrav005277queensquest5ce", fullPrice:	19.99, fullWcPrice:	40},
-      {oid:"bigkahunawords", fullPrice:	19.99, fullWcPrice:	40},      
+      {oid:"bigkahunawords", fullPrice:	19.99, fullWcPrice:	40},
 
 
       {oid:"oidimma006073renzoracer", fullPrice:	9.99, fullWcPrice:	40},
@@ -148,7 +148,7 @@ class GameTile extends Component {
           return (
            (game.fullWcPrice != null && this.props.showPricesIn === 'wildcoins' ) || this.props.showPricesIn === 'cash' ? (
             <div onClick={() => this.props.tileClick(game)}
-               className={"wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 active"}
+               className={"wrapperElement col-xs-4 col-sm-4 col-md-5ths col-lg-5ths active"}
                data-event-action="Fall-flash-sale Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
