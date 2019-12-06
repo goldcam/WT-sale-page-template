@@ -1,10 +1,22 @@
-$active-btn-color:rgb(35, 89, 188);
+$active-btn-color:#4f1ac4;
 $active-Text-color: #fff;
 //blue rgb(35, 89, 188);
 //green rgb(102, 188, 35);
+//purple #4f1ac4
 
 $active-border:2px solid rgb(102, 188, 35);
 //none 1px solid transparent
+
+
+// content: '';
+//     width: 16px;
+//     height: 16px;
+//     display: inline-block;
+//     margin-left: 4px;
+//     vertical-align: bottom;
+//     background-image: url(https://webassets.wildtangent.com/css/img/wildcoin_xsm.png);
+
+
 
 
 #ToggleMenu{
@@ -12,9 +24,9 @@ $active-border:2px solid rgb(102, 188, 35);
   .btn.btn-primary{
     cursor: pointer;
     background-color: #ccc;
-    color:#666;
+    color:#545454;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     box-sizing: border-box;
     display: inline-block;
     text-align: center;
@@ -31,6 +43,10 @@ $active-border:2px solid rgb(102, 188, 35);
       background-color:$active-btn-color;
       color:$active-Text-color;
       //border:$active-border;
+    }
+    &.wc-icon {
+      background-color: inherit;
+      background: url(https://webassets.wildtangent.com/css/img/wildcoin_xsm.png) no-repeat;
     }
     &.focus {
       outline:0;
@@ -59,5 +75,17 @@ $active-border:2px solid rgb(102, 188, 35);
     border-bottom-right-radius: 0;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
+
+  // .wc-icon{
+  //   &after{
+  //     content: '';
+  //         width: 16px;
+  //         height: 16px;
+  //         display: inline-block;
+  //         margin-left: 4px;
+  //         vertical-align: bottom;
+  //         background-image: url(https://webassets.wildtangent.com/css/img/wildcoin_xsm.png);
+  //   }
+  // }
 
 }

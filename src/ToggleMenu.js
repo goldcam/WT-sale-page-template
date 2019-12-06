@@ -20,7 +20,7 @@ class ToggleManu extends Component {
                  defaultChecked={this.props.showPricesIn === 'cash' ? true : false}
                  /> Cash
         </label>
-        <label className={`btn btn-primary ${this.props.showPricesIn === 'wildcoins' ? 'active' : ''}`}
+        <label className={`btn btn-primary wc-icon ${this.props.showPricesIn === 'wildcoins' ? 'active' : ''}`}
                data-price='wildcoins'
                onClick={this.props.changepricesDisplay}>
           <input type="radio"
