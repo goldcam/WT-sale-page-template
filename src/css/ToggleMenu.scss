@@ -50,7 +50,7 @@ $active-border:2px solid rgb(102, 188, 35);
       &.active{
         background-color: $wcBtnBg;
       }
-      background-color:darken($wcBtnBg, 20%);
+      background-color:darken($wcBtnBg, 26%);
       &:before{
         content: '';
         width: 16px;
@@ -64,7 +64,7 @@ $active-border:2px solid rgb(102, 188, 35);
       &.active{
         background-color: $cashBtnBg;
       }
-      background-color:darken($cashBtnBg, 20%)
+      background-color:darken($cashBtnBg, 26%)
     }
     &.focus {
       outline:0;
