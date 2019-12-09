@@ -1,7 +1,8 @@
-$active-btn-color:#4f1ac4;
+//$active-btn-color:rgb(102, 188, 35);
+$cashBtnBg:rgb(35, 89, 188);;
+$wcBtnBg:#4f1ac4;
 $active-Text-color: #fff;
 //blue rgb(35, 89, 188);
-//green rgb(102, 188, 35);
 //purple #4f1ac4
 
 $active-border:2px solid rgb(102, 188, 35);
@@ -24,7 +25,7 @@ $active-border:2px solid rgb(102, 188, 35);
   .btn.btn-primary{
     cursor: pointer;
     background-color: #ccc;
-    color:#545454;
+    color:#bababa;
     text-transform: uppercase;
     font-weight: 600;
     box-sizing: border-box;
@@ -40,13 +41,30 @@ $active-border:2px solid rgb(102, 188, 35);
     line-height: 1.5em;
     transform: all .3s ease;
     &.active{
-      background-color:$active-btn-color;
-      color:$active-Text-color;
+      color: #fff;
+      // background-color:$active-btn-color;
+      // color:$active-Text-color;
       //border:$active-border;
     }
     &.wc-icon {
-      background-color: inherit;
-      background: url(https://webassets.wildtangent.com/css/img/wildcoin_xsm.png) no-repeat;
+      &.active{
+        background-color: $wcBtnBg;
+      }
+      background-color:darken($wcBtnBg, 20%);
+      &:before{
+        content: '';
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: -3px;
+        background-image: url(https://webassets.wildtangent.com/css/img/wildcoin_xsm.png);
+     }
+    }
+    &.cash{
+      &.active{
+        background-color: $cashBtnBg;
+      }
+      background-color:darken($cashBtnBg, 20%)
     }
     &.focus {
       outline:0;
