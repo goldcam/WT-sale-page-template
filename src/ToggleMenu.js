@@ -8,8 +8,8 @@ class ToggleManu extends Component {
     return (
       <div id="ToggleMenu" >
       <span className="toggle-pretext">Show price in:</span>
-      <div className="btn-group btn-group-toggle" data-toggle="buttons">
-        <label className={`btn btn-primary ${this.props.showPricesIn === 'cash' ? 'active' : ''}`}
+      <div className="btn-group btn-group-toggle " data-toggle="buttons">
+        <label className={`btn btn-primary cash ${this.props.showPricesIn === 'cash' ? 'active' : ''}`}
                data-price='cash'
                onClick={this.props.changepricesDisplay}>
           <input type="radio"
@@ -20,7 +20,7 @@ class ToggleManu extends Component {
                  defaultChecked={this.props.showPricesIn === 'cash' ? true : false}
                  /> Cash
         </label>
-        <label className={`btn btn-primary ${this.props.showPricesIn === 'wildcoins' ? 'active' : ''}`}
+        <label className={`btn btn-primary wc-icon ${this.props.showPricesIn === 'wildcoins' ? 'active' : ''}`}
                data-price='wildcoins'
                onClick={this.props.changepricesDisplay}>
           <input type="radio"

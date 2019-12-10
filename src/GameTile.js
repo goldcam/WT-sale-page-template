@@ -27,8 +27,9 @@ class GameTile extends Component {
       {oid:"tendaysunderthesea", fullPrice:	9.99, fullWcPrice:	40},
       {oid:"thewitchsapprenticeamagicaalmish", fullPrice:	19.99, fullWcPrice:	40},
       {oid:"oidbrav005277queensquest5ce", fullPrice:	19.99, fullWcPrice:	40},
-      {oid:"bigkahunawords", fullPrice:	19.99, fullWcPrice:	40},      
+      {oid:"bigkahunawords", fullPrice:	19.99, fullWcPrice:	40},
 
+      //OIDS GO HERE EXAMPLE: {oid:"oidimma006073renzoracer", fullPrice:	9.99, fullWcPrice:	40},
 
       {oid:"oidimma006073renzoracer", fullPrice:	9.99, fullWcPrice:	40},
       {oid:"oidalaw005994robinhoodcountry", fullPrice:	19.99, fullWcPrice:	80},
@@ -136,7 +137,6 @@ class GameTile extends Component {
     let img = e.target;
     img.src = `https://optimizedimages.wildtangent.com/${img.dataset.oid}/big_icon.png?auto=format&dpr=1&cs=tinysrgb&fill=blur&crop=false&fit=fillmax&w=350&h=143&ixlib=react-7.2.0`;
     img.classList.remove('featuredTile');
-    //img.srcset = `https://optimizedimages.wildtangent.com/${img.dataset.oid}/big_icon.png?auto=format&dpr=2&cs=tinysrgb&fill=blur&crop=false&fit=fillmax&w=350&h=196&ixlib=react-7.2.0 2x, https://optimizedimages.wildtangent.com/${img.dataset.oid}/big_icon.png?auto=format&dpr=3&cs=tinysrgb&fill=blur&crop=false&fit=fillmax&w=350&h=196&ixlib=react-7.2.0 3x`
     img.classList.add('bigIcon');
   }
 
