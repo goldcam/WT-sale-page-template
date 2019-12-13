@@ -12,7 +12,7 @@ class App extends Component {
       games: [],
       showPricesIn: 'cash',
       showGames: false,
-      showToggle: true // change to false in production
+      showToggle: false // change to false in production
     }
     this.tileClick = this.tileClick.bind(this);
     this.changepricesDisplay = this.changepricesDisplay.bind(this);
