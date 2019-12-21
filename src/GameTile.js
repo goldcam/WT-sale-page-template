@@ -79,6 +79,8 @@ class GameTile extends Component {
       {oid:"oidbig005971phantasmatremains", fullPrice:	9.99,	fullWcPrice:40},
       {oid:"oidbig005970mysteryoftheanci", fullPrice:	9.99,	fullWcPrice:40}
 
+      //https://products.wildtangent.com/products/v1.0/wildgames/us/en-us/oidbig005970mysteryoftheanci?output=json&scope=all
+
 
     ],
     promises = gamesArr.map((obj, i) => {
@@ -111,6 +113,7 @@ class GameTile extends Component {
                 'fullPrice': obj.fullPrice,
                 'releasedate': releaseDate,
                  'wcPrice': prod.wildcoinspurchasecost.value,
+                 'ranking': prod.ranking.mostpopularrating.rank
 
                  // 'fullPrice': prod.purchasecost.value.toFixed(2),
                  // 'fullWcPrice': prod.wildcoinspurchasecost.value,
@@ -120,11 +123,17 @@ class GameTile extends Component {
     return X;
   });
     return Promise.all(promises)
-    .then(results => {
-      return results.sort((a, b ) => {
-        return b.releasedate - a.releasedate;
-      });
+    .then(res => {
+      return res.sort((a,b) => {
+        return a.ranking - b.ranking;
+      })
     })
+    //for sorting by release date decending
+    // .then(results => {
+    //   return results.sort((a, b ) => {
+    //     return b.releasedate - a.releasedate;
+    //   });
+    // })
     .then(res =>{
       this.setState({
         games: res
