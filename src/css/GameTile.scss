@@ -1,3 +1,4 @@
+
 $tileBG: #fff;
 $gray: #8d8d8d;
 
@@ -6,6 +7,21 @@ div.innerWrapper > a {
   margin: 5px 10px;
   text-align: left;
   line-height: 1.125em;
+}
+section.genre-section{
+  position: relative;
+    z-index: 100;
+  &> div{
+    box-sizing: border-box;
+    padding:0;
+    h2{
+      padding: 0 0 5px;
+      font-size: 2.25em;
+      color:#fff;
+      font-weight: 600;
+    }
+  }
+
 }
 
   div.innerWrapper .gameTitle{
@@ -28,7 +44,7 @@ div.innerWrapper > a {
   }
 
   p.bottom-text {
-    min-height: 40px;
+    min-height: 22px;
   }
 
   .gamePrice{
@@ -176,6 +192,6 @@ div.wrapperElement{
     .bigIconDiv img {
       transform: scale(1.07);
     }
-    
+
   }
 }

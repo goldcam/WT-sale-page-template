@@ -1,0 +1,38 @@
+$button-background-color:#139f4d;
+$button-text-color:#fff;
+$button-hover-background-color:#063c92;
+
+.genre-menu{
+  padding:0 8px;
+  ul{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    li{
+      margin: 0;
+      padding: 0;
+      flex:1;
+      box-sizing: border-box;
+      display: inline-block;
+      border-bottom:solid 4px #063c92;
+      a{
+        display: block;
+        text-decoration: none;
+        background-color: $button-background-color;
+        color:$button-text-color;
+        transition: background-color .3s ease-out;
+        padding: 10px 15px;
+        font-size: 1.25em;
+        text-align: center;
+        font-weight: 600;
+        &:hover{
+          background-color:$button-hover-background-color;
+        }
+      }
+    }
+  }
+}

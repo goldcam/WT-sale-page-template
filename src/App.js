@@ -2,21 +2,33 @@ import React, { Component } from 'react';
 import './css/App.scss';
 
 import GameTile from './GameTile'
-import ToggleMenu from './ToggleMenu'
+// import ToggleMenu from './ToggleMenu'
+// import GenreMenu from './GenreMenu'
+
+import EnUsHeader from './img/en-us/header.png'
+import DeDeHeader from './img/de-de/header.png'
+import ItItHeader from './img/it-it/header.png'
+import FrFrHeader from './img/fr-fr/header.png'
+import EsEsHeader from './img/es-es/header.png'
+import EsMxHeader from './img/es-mx/header.png'
+import PtBrHeader from './img/pt-br/header.png'
+import KoKrHeader from './img/ko-kr/header.png'
+import ZhHkHeader from './img/zh-hk/header.png'
+import ZhCnHeader from './img/zh-cn/header.png'
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      games: [],
-      showPricesIn: 'cash',
       showGames: false,
-      showToggle: false // change to false in production
+      lang: 'en-us',
+      headerImage: EnUsHeader
     }
     this.tileClick = this.tileClick.bind(this);
     this.changepricesDisplay = this.changepricesDisplay.bind(this);
-    this.updatePricesShown = this.updatePricesShown.bind(this);
+    this.getLang = this.getLang.bind(this);
+    this.getHeaderImage = this.getHeaderImage.bind(this);
   }
   tileClick(game){
     window.location = `/games/${game.friendlyproductkey}`;
@@ -28,62 +40,106 @@ class App extends Component {
       });
   }
 
-  updatePricesShown(){
-    let wildCointAmmount = 0;
-    if(document.getElementsByClassName('wildcoins-menu').length > 0){
-      wildCointAmmount = parseInt(document.getElementsByClassName('wildcoins-menu')[0].children[0].textContent);
+  getLang(){
+    if(typeof window.dataLayer !== 'undefined'){
+      let userLanguage = window.dataLayer[0].userLanguage.toLocaleLowerCase()
+      this.setState({
+        lang:userLanguage
+      })
     }
-    wildCointAmmount >= 10 ? (
-      this.setState({
-        showGames: true,
-        showPricesIn: 'wildcoins',
-        showToggle: true
-      })
-    ) : (
-      this.setState({
-        showGames: true
-      })
-    );
   }
 
-  componentDidUpdate(){
+  getHeaderImage(lang){
+    switch(lang){
+      case 'en-us':
+      default:
+        this.setState({
+          headerImage: EnUsHeader
+        })
+      break;
+      case 'de-de':
+        this.setState({
+          headerImage: DeDeHeader
+        })
+      break;
+      case 'it-it':
+        this.setState({
+          headerImage: ItItHeader
+        })
+      break;
+      case 'fr-fr':
+        this.setState({
+          headerImage: FrFrHeader
+        })
+      break;
+      case 'es-es':
+        this.setState({
+          headerImage: EsEsHeader
+        })
+      break;
+      case 'es-mx':
+        this.setState({
+          headerImage: EsMxHeader
+        })
+      break;
+      case 'pt-br':
+        this.setState({
+          headerImage: PtBrHeader
+        })
+      break;
+      case 'ko-kr':
+        this.setState({
+          headerImage: KoKrHeader
+        })
+      break;
+      case 'zh-hk':
+        this.setState({
+          headerImage: ZhHkHeader
+        })
+      break;
+      case 'zh-cn':
+        this.setState({
+          headerImage: ZhCnHeader
+        })
+      break;
+    }
   }
 
   componentDidMount(){
-    window.addEventListener('load', this.updatePricesShown);
+    this.getLang();
+    this.getHeaderImage(this.state.lang);
+    this.setState({
+      showGames: true
+    })
   }
 
   render(){
+    let backgroundImg = {
+      backgroundImage: `url(${this.state.headerImage})`
+    }
     return (
       <div id="app" >
         <div className="container main-container">
           <div className="row">
-            <div className="col-sm-12 page-title">
+            <div className="col-sm-12 page-title" style={backgroundImg}>
             </div>
           </div>
-          { this.state.showToggle ? (<div className="row">
-            <div className="col-sm-12">
-              <ToggleMenu changepricesDisplay={this.changepricesDisplay}
-                          showPricesIn={this.state.showPricesIn}
-                           />
-            </div>
-          </div>) : '' }
-          <div className="row">
-            <div className="col-sm-12">
-            <div className="row game-tiles">
-                <GameTile tileClick={this.tileClick}
-                          activeGame={this.state.activeGameSection}
-                          showPricesIn={this.state.showPricesIn}
-                          showGames={this.state.showGames} />
-            </div>
-            </div>
-          </div>
-          <div className="scrollSpacer"></div>
         </div>
+        <div className="game-tiles">
+            <GameTile tileClick={this.tileClick}
+                      showGames={this.state.showGames}
+                      lang={this.state.lang} />
+        </div>
+        <div className="scrollSpacer"></div>
       </div>
-
     );
   }
 }
 
 export default App
+
+// <div className="row">
+//   <div className="col-sm-12 genre-menu">
+//     <GenreMenu genres={this.state.genres} />
+//   </div>
+// </div>
