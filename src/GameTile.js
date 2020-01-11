@@ -130,6 +130,7 @@ class GameTile extends Component {
                 'fullPrice': obj.fullPrice,
                 'releasedate': releaseDate,
                  'wcPrice': prod.wildcoinspurchasecost.value,
+                 'ranking': prod.ranking.mostpopularrating.rank
 
                  // 'fullPrice': prod.purchasecost.value.toFixed(2),
                  // 'fullWcPrice': prod.wildcoinspurchasecost.value,
@@ -139,11 +140,16 @@ class GameTile extends Component {
     return X;
   });
     return Promise.all(promises)
-    .then(results => {
-      return results.sort((a, b ) => {
-        return b.releasedate - a.releasedate;
-      });
+    .then(res => {
+      return res.sort((a,b) => {
+        return a.ranking - b.ranking;
+      })
     })
+    // .then(results => {
+    //   return results.sort((a, b ) => {
+    //     return b.releasedate - a.releasedate;
+    //   });
+    // })
     .then(res =>{
       this.setState({
         games: res
@@ -171,7 +177,7 @@ class GameTile extends Component {
            (game.fullWcPrice != null && this.props.showPricesIn === 'wildcoins' ) || this.props.showPricesIn === 'cash' ? (
             <div onClick={() => this.props.tileClick(game)}
                className={"wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 active"}
-               data-event-action="8Floor--flash-sale Tile"
+               data-event-action="8Floor-flash-sale Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
                key={game.i}
