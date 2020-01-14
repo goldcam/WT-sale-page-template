@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './css/App.scss';
 
 import GameTile from './GameTile'
-import ToggleMenu from './ToggleMenu'
 
 class App extends Component {
 
@@ -10,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       games: [],
-      showPricesIn: 'cash',
+      //showPricesIn: 'cash',
       showGames: false,
       showToggle: false // change to false in production
     }
@@ -61,13 +60,7 @@ class App extends Component {
             <div className="col-sm-12 page-title">
             </div>
           </div>
-          { this.state.showToggle ? (<div className="row">
-            <div className="col-sm-12">
-              <ToggleMenu changepricesDisplay={this.changepricesDisplay}
-                          showPricesIn={this.state.showPricesIn}
-                           />
-            </div>
-          </div>) : '' }
+
           <div className="row">
             <div className="col-sm-12">
             <div className="row game-tiles">
