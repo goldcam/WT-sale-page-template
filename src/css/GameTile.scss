@@ -52,8 +52,8 @@ div.innerWrapper > a {
       &.sale-and-discount{
         display: block;
         // text-align: right;
-        margin-top: 4px;
-        font-size: 1.417em;
+        padding: 10px 0 6px;
+        font-size: 1.25em;
         font-weight: 600;
       }
       &.price{
@@ -62,7 +62,9 @@ div.innerWrapper > a {
       }
       &.percent-off{
         margin-right: .25em;
-        color: #b60505;
+        color: #2359bc;
+        font-weight: bold;
+        // text-transform: capitalize;
       }
       &.wildcoinPrice{
         color:#4f1ac4;
@@ -76,7 +78,7 @@ div.innerWrapper > a {
           width: 16px;
           height: 16px;
           display: inline-block;
-          margin-left: 4px;
+          margin-left: 2px;
           vertical-align: bottom;
           background-image: url('https://webassets.wildtangent.com/css/img/wildcoin_xsm.png');
         }

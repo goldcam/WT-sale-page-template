@@ -31,6 +31,8 @@ class GameTile extends Component {
 
       //OIDS GO HERE EXAMPLE: {oid:"oidimma006073renzoracer", fullPrice:	9.99, fullWcPrice:	40},
 
+      //https://products.wildtangent.com/products/v1.0/wildgames/us/en-us/bestofhiddenobject?output=json&scope=all
+
       {oid:"bestofhiddenobject", cost: 5, variant: "rent"},
       {oid:"oidlazy005535thefarkingdomsh",cost: 3, variant: "buy"},
       {oid:"moai3trademission",cost: 1, variant: "rent"},
@@ -73,7 +75,8 @@ class GameTile extends Component {
                 'fullPrice': obj.fullPrice,
                 'releasedate': releaseDate,
                 'wcPrice': prod.wildcoinspurchasecost.value,
-                'ranking': prod.ranking.mostpopularrating.rank
+                'ranking': prod.ranking.mostpopularrating.rank,
+                'sessioncost': prod.sessioncost
 
                  // 'fullPrice': prod.purchasecost.value.toFixed(2),
                  // 'fullWcPrice': prod.wildcoinspurchasecost.value,
@@ -148,8 +151,8 @@ class GameTile extends Component {
 
 
                   <span className='sale-and-discount'>
-                    <span className="">{game.variant} with WildCoins</span>
-                    <span className="wildcoinPrice price">{game.wildcoinspurchasecost.value}</span>
+                    <span className="percent-off">{`${game.variant.charAt(0).toUpperCase() + game.variant.slice(1)}`} with WildCoins</span>
+                    <span className="wildcoinPrice price">{game.variant === 'buy' ? game.wildcoinspurchasecost.value : game.sessioncost}</span>
                   </span>
 
                 </span>
