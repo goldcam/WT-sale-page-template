@@ -33,16 +33,16 @@ class GameTile extends Component {
 
       //https://products.wildtangent.com/products/v1.0/wildgames/us/en-us/bestofhiddenobject?output=json&scope=all
 
-      {oid:"bestofhiddenobject", cost: 5, variant: "rent"},
-      {oid:"oidlazy005535thefarkingdomsh",cost: 3, variant: "buy"},
-      {oid:"moai3trademission",cost: 1, variant: "rent"},
-      {oid:"aliciaquatermainsotltse",cost: 5, variant: "buy"},
-      {oid:"farmscapes",cost: 2, variant: "buy"},
-      {oid:"runefall",cost: 1, variant: "rent"},
-      {oid:"seasonmatch3hd",cost: 4, variant: "buy"},
-      {oid:"jigsawworldtour",cost: 2, variant: "rent"},
-      {oid:"avalonlegendssolitaire3",cost: 3, variant: "rent"},
-      {oid:"Vikingsaga",cost: 1, variant: "buy"}
+      //{oid:"bestofhiddenobject", cost: 5, variant: "rent"},
+      {oid:"oidlazy005535thefarkingdomsh",cost: 3, variant: "buy", fullWcPrice: 40},
+      //{oid:"moai3trademission",cost: 1, variant: "rent"},
+      {oid:"aliciaquatermainsotltse",cost: 5, variant: "buy", fullWcPrice: 20},
+      {oid:"farmscapes",cost: 2, variant: "buy", fullWcPrice: 20},
+      //{oid:"runefall",cost: 1, variant: "rent"},
+      {oid:"seasonmatch3hd",cost: 4, variant: "buy", fullWcPrice: 40},
+      //{oid:"jigsawworldtour",cost: 2, variant: "rent"},
+      //{oid:"avalonlegendssolitaire3",cost: 3, variant: "rent"},
+      {oid:"Vikingsaga",cost: 1, variant: "buy", fullWcPrice: 6}
     ],
     promises = gamesArr.map((obj, i) => {
       const X = axios.get(`https://products.wildtangent.com/products/v1.0/wildgames/us/en-us/${obj.oid}?output=json&scope=all`)
@@ -122,15 +122,15 @@ class GameTile extends Component {
           return (
 
             <div onClick={() => this.props.tileClick(game)}
-               className="wrapperElement col-xs-6 col-sm-6 col-md-5ths col-lg-5ths active"
-               data-event-action="8Floor-flash-sale Tile"
+               className="wrapperElement col-xs-6 col-sm-6 col-md-5ths col-lg-5ths col-xl-5ths active"
+               data-event-action="Low-wcs Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
                key={game.i}
                data-orderitemid={game.productkey}>
             <div className="innerWrapper">
             <div className="bigIconDiv">
-              <img src={game.featuredTile} className="featuredTile" alt={game.title} onError={this.addDefaultSrc} data-oid={game.productkey} />
+              <img src={game.bigIcon} className="bigIcon" alt={game.title} onError={this.addDefaultSrc} data-oid={game.productkey} />
             </div>
 
             <ResponsiveEllipsis style={{ whiteSpace: 'pre-wrap' }}
@@ -151,7 +151,7 @@ class GameTile extends Component {
 
 
                   <span className='sale-and-discount'>
-                    <span className="percent-off">{`${game.variant.charAt(0).toUpperCase() + game.variant.slice(1)}`} with WildCoins</span>
+                    
                     <span className="wildcoinPrice price">{game.variant === 'buy' ? game.wildcoinspurchasecost.value : game.sessioncost}</span>
                   </span>
 
@@ -171,3 +171,6 @@ class GameTile extends Component {
   }
 }
 export default GameTile
+
+
+//className="wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 active"
