@@ -51,7 +51,7 @@ div.innerWrapper > a {
       }
       &.sale-and-discount{
         display: block;
-        // text-align: right;
+        text-align: right;
         padding: 10px 0 6px;
         font-size: 1.25em;
         font-weight: 600;
@@ -62,7 +62,7 @@ div.innerWrapper > a {
       }
       &.percent-off{
         margin-right: .25em;
-        color: #2359bc;
+        color: #b60505;
         font-weight: bold;
         // text-transform: capitalize;
       }

@@ -146,16 +146,17 @@ class GameTile extends Component {
             <p className="bottom-text">
               <span className="genre">{game.genre} </span>
 
+              <span className="gamePrice wildcoins">
+                <span className="strikeThrough">{game.fullWcPrice}</span>
 
-                <span className="gamePrice wildcoins">
-
-
-                  <span className='sale-and-discount'>
-                    
-                    <span className="wildcoinPrice price">{game.variant === 'buy' ? game.wildcoinspurchasecost.value : game.sessioncost}</span>
+                <span className='sale-and-discount'>
+                  <span className="percent-off">
+                  {Math.abs(((game.wildcoinspurchasecost.value/game.fullWcPrice) - 1) * 100).toFixed()}% off
                   </span>
-
+                  <span className="wildcoinPrice price">{game.wildcoinspurchasecost.value}</span>
                 </span>
+
+              </span>
 
 
             </p>
