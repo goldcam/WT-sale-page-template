@@ -123,7 +123,7 @@ class GameTile extends Component {
 
             <div onClick={() => this.props.tileClick(game)}
                className="wrapperElement col-xs-6 col-sm-6 col-md-5ths col-lg-5ths col-xl-5ths active"
-               data-event-action="Low-wcs Tile"
+               data-event-action="Game-Offer Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
                key={game.i}
