@@ -31,74 +31,37 @@ class GameTile extends Component {
 
       //OIDS GO HERE EXAMPLE: {oid:"oidimma006073renzoracer", fullPrice:	9.99, fullWcPrice:	40},
 
-        {oid:"chroniclesofthewitcheswarlocks","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"craftingstory","fullPrice":"4.99","fullWcPrice":10},
-        {oid:"detectiveofspiritworld","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"detectiveriddlessherlock","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"detectiveriddlessherlock2","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"katyandbob","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"katyandbobcakecafese","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"katyandbobsafaricafese","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"katybobcakecafece","fullPrice":"19.99","fullWcPrice":40},
-        {oid:"katybobsafaricafe","fullPrice":"19.99","fullWcPrice":40},
-        {oid:"knightsolitaire","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"knightsolitaire2","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"lostartifactsaztecgoldce","fullPrice":"19.99","fullWcPrice":40},
-        {oid:"lostartifactsgoldenisland","fullPrice":"19.99","fullWcPrice":40},
-        {oid:"lostartifactsgoldenislandse","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"lostartifactssoulstone","fullPrice":"19.99","fullWcPrice":40},
-        {oid:"lostartifactssoulstonese","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongbusinessstyle","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongcarnaval2","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongchristmas2","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjonggold2pirateisland","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongmagicjourney2","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongmagicjourney3","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongroyaltowers","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mahjongworldcontest","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mysteriesoftheundead","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mysterysolitairearkhamsspirits","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"mysterysolitairegrimmstales","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"mysterysolitairetheblackraven","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"oid8flo004889mosaicsgaloreglor","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo0048911001jigsawearthc","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo004971lostartifactstime","fullPrice":"19.99","fullWcPrice":80},
-        {oid:"oid8flo004972lostartifactstime","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005027solitairelegendof","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005041fairytalemosaics","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005042picrossbonbonnon","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005072fillandcrosstri","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005073holidayjigsawhall","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005121daydthroughtimec","fullPrice":"19.99","fullWcPrice":80},
-        {oid:"oid8flo0051261001jigsawworldt","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo0051541001jigsawearthc","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005199mahjongworldconte","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005273picrosshanseland","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005275alicesjigsawtime","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005292daydtroughtimese","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005293cookingtripce","fullPrice":"14.99","fullWcPrice":60},
-        {oid:"oid8flo005294cookingtripse","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005300solitairebeachsea","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005406royalroadsce","fullPrice":"19.99","fullWcPrice":80},
-        {oid:"oid8flo005407royalroadsse","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005507solitairelegendof","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005508detectivesolitaire","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005524mysterysolitairec","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005538strikesolitaire","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005539alicesjigsawwonde","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005712redridinghoodsol","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo0057151001jigsawsixmag","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo0057391001jigsawlegends","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005746cookingtripback","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005747cookingtripback","fullPrice":"19.99","fullWcPrice":80},
-        {oid:"oid8flo0058801001jigsawworldt","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005882lostartifactsfro","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"oid8flo005883lostartifactsfro","fullPrice":"14.99","fullWcPrice":45},
-        {oid:"oid8flo005885mysterysolitaire","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"oid8flo005926crownoftheempire","fullPrice":"14.99","fullWcPrice":60},
-        {oid:"oid8flo005960detectivesolitaire","fullPrice":"9.99","fullWcPrice":20},
-        {oid:"oid8flo0061321001jigsawmyths","fullPrice":"9.99","fullWcPrice":40},
-        {oid:"onethousandonejigsawearth4","fullPrice":"9.99","fullWcPrice":20}
+        {oid: "oidcasu005308vacationadventures", fullPrice: 19.99, fullWcPrice: 40},
+        {oid: "oidcasu006108christmaswonderlan", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidalaw005994robinhoodcountry", fullPrice: 19.99, fullWcPrice: 40},
+        {oid: "oidalaw005975incredibledracula", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidgame005992fabulousnewyork", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidgame005637deliciousemilys", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidsuri006000jewelmatchatlanti", fullPrice: 12.99, fullWcPrice: 50},
+        {oid: "oidsuri005995runefall2", fullPrice: 19.99, fullWcPrice: 40},
+        {oid: "oidiwin006036maggiesmoviesse", fullPrice: 14.99, fullWcPrice: 60},
+        {oid: "oidiwin005773primeroselake", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidbrav006069familymysteriesce", fullPrice: 14.99, fullWcPrice: 30},
+        {oid: "oidbrav006071yuletidelegends3", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oid8flo005883lostartifactsfro", fullPrice: 9.99, fullWcPrice: 20},
+        {oid: "oid8flo005927crownoftheempire", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidjetd00593612laboursofhercu", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidjetd006031shoppingclutter4", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidfive005398newyorkmysteries", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidfive005075thelegacythetree", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidarti005904themythseekers2", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidarti005852unchartedtidespo", fullPrice: 19.99, fullWcPrice: 40},
+        {oid: "oidowl005932fablesofthekingd", fullPrice: 14.99, fullWcPrice: 30},
+        {oid: "oidnotu005979mahjongfestsakur", fullPrice: 9.99, fullWcPrice: 20},
+        {oid: "oidbig006068aliceswonderland", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidwork006002argonautsagencym", fullPrice: 14.99, fullWcPrice: 60},
+        {oid: "oidpuzz005148clutter1000", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidgrow005416elvenlegend7ce", fullPrice: 19.99, fullWcPrice: 80},
+        {oid: "oidquma005706romanadventurebri", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidmagn006033goldoftheincass", fullPrice: 9.99, fullWcPrice: 20},
+        {oid: "oidlazy005953traveltoengland", fullPrice: 9.99, fullWcPrice: 40},
+        {oid: "oidimma006030legacywitchislan", fullPrice: 9.99, fullWcPrice: 20},
+
     ],
     promises = gamesArr.map((obj, i) => {
       const X = axios.get(`https://products.wildtangent.com/products/v1.0/wildgames/us/en-us/${obj.oid}?output=json&scope=all`)
@@ -140,16 +103,16 @@ class GameTile extends Component {
     return X;
   });
     return Promise.all(promises)
-    .then(res => {
-      return res.sort((a,b) => {
-        return a.ranking - b.ranking;
-      })
-    })
-    // .then(results => {
-    //   return results.sort((a, b ) => {
-    //     return b.releasedate - a.releasedate;
-    //   });
+    // .then(res => {
+    //   return res.sort((a,b) => {
+    //     return a.ranking - b.ranking;
+    //   })
     // })
+    .then(results => {
+      return results.sort((a, b ) => {
+        return b.releasedate - a.releasedate;
+      });
+    })
     .then(res =>{
       this.setState({
         games: res
@@ -177,7 +140,7 @@ class GameTile extends Component {
            (game.fullWcPrice != null && this.props.showPricesIn === 'wildcoins' ) || this.props.showPricesIn === 'cash' ? (
             <div onClick={() => this.props.tileClick(game)}
                className={"wrapperElement col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 active"}
-               data-event-action="8Floor-flash-sale Tile"
+               data-event-action="lunar-new-year-sale Tile"
                data-event-category="Landing Page"
                data-event-label={game.productkey}
                key={game.i}
