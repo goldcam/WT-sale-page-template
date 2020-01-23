@@ -161,6 +161,7 @@ div.wrapperElement{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     .bigIconDiv {
       overflow: hidden;
+      border-radius: 5px 5px 0 0;
       img {
         border-radius: 5px 5px 0 0;
         transition: transform 300ms ease;
@@ -176,6 +177,6 @@ div.wrapperElement{
     .bigIconDiv img {
       transform: scale(1.07);
     }
-    
+
   }
 }
