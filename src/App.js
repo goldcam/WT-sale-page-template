@@ -9,7 +9,7 @@ import ToggleMenu from './ToggleMenu'
 const App = () => {
   const [showPricesIn, setShowPricesIn] = useState('cash');
   const [showGames, setShowGames] = useState(false);
-  const [showToggle, setShowToggle] = useState(true);// change to false in production
+  const [showToggle, setShowToggle] = useState(false);// change to false in production
   const tileClick = (game) => {
     window.location = `/games/${game.friendlyproductkey}`;
   };
@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     window.addEventListener('load', updatePricesShown);
   }, []);
-  
+
   return (
         <div id="app" >
           <div className="container main-container">
