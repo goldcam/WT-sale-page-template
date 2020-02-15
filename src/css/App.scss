@@ -4,7 +4,7 @@ html,body{
   margin: 0;
 }
 #root{
-  background: #2a97fe;
+  background: #A31B34;
 }
 
 #app {
@@ -48,6 +48,9 @@ body{
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f27405', endColorstr='#ffc600',GradientType=1 ); /* IE6-9 */
 
     }
+}
+a:hover {
+    color:inherit !important;
 }
 
 .main-container {
